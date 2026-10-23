@@ -1,3 +1,18 @@
+# ====================================
+# Challenge data (kept private for patient confidentiality reasons)
+# Download instructions: see data/README.md
+# ====================================
+data/*
+!data/README.md
+!data/sample_synthetic.csv
+
+# Submissions and large artifacts
+outputs/predictions/
+outputs/models/
+*.zip
+*.parquet
+*.h5
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
