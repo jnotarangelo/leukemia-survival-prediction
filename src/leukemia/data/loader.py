@@ -26,7 +26,7 @@ def drop_missing_target(merged:pd.DataFrame) -> tuple:
     n_dropped = len(merged) - len(out)
     return out, n_dropped
 
-def load_clinical_processed(clinical_train_processed_path) -> pd.DataFrame:
+def split_clinical_processed(clinical_train_processed_path) -> pd.DataFrame:
     """
     Loading the CSV dataset as a pandas dataframe
     :param clinical_train_processed_path: path of the processed clinical train file
@@ -44,4 +44,4 @@ def make_surv_target(os_years: pd.Series, os_status: pd.Series) -> np.ndarray:
     :param os_status: status of the patient at the end of the follow-up
     :return:
     """
-    return Surv.from_arrays(event=os_status, time=os_years)
+    return Surv.from_arrays(event=os_status.astype(bool), time=os_years)
